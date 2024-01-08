@@ -74,7 +74,7 @@ du -h
 du -h ./romeo.txt
 ```
 
-## nano : text editor
+## `nano` : text editor
 
 `nano [file path]`
 
