@@ -44,7 +44,7 @@ wc -l < out.txt >> out_1.txt
 
 ## `1> or 1>>` : redirecting stdout
 
-it's adjuctly same as `> or >>`
+it's exactly same as `> or >>`
 
 ## `2> or 2>>` : redirecting stderr
 

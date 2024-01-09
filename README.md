@@ -5,3 +5,4 @@
 - <a href="3_file_management.md" target="_blanck" >File management</a>
 - <a href="4_text_file_management.md" target="_blanck" >Text file management</a>
 - <a href="5_data_streams_management.md" target="_blanck" >stdin, stdout and stderr management</a>
+- <a href="6_Pipes_command.md" target="_blanck" >Pipe command</a>
