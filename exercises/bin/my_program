@@ -1,0 +1,3 @@
+#!/usr/bin/env node
+console.log(process.env.MESSAGE || "If you want a custom message, put value into MESSAGE env during running this program like, MESSAGE='Hello!' my_program");
+console.log("Hello from my program");
