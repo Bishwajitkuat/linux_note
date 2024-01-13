@@ -8,3 +8,4 @@
 - <a href="6_Pipes_command.md" target="_blanck" >Pipe command</a>
 - <a href="7_Shell_environment.md" target="_blanck" >Shell environment</a>
 - <a href="8_custom_bash_prompt.md" target="_blanck" >Customize bash prompt</a>
+- <a href="9_shell_expansions.md" target="_blanck" >Shell expansions</a>

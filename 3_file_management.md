@@ -153,7 +153,7 @@ ls -lah ./**/*.png
 
 - it will return any file with png extention from the current dir and any of it's child dir.
 
-![globbing with ?](resouces/imgs/globbing_exam_1.png)
+![globbing with ?](resources/imgs/globbing_exam_1.png)
 
 NOTE: it's always a best practice to us `./` before file or dir name to address from current dir when useing globbing, it will prevent many pitfalls of globbing
 

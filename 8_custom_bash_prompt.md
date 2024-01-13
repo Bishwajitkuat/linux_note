@@ -101,4 +101,4 @@ if we do not wrap the `tput` substitue command inside `\[ \]`, it mess up with c
 PS1='\[$(tput setaf 50)$(tput bold)\]§§\[$(tput setaf 3)\](\@)\[$(tput setaf 46)\]\u\[$(tput setaf 7)\]𐣼\[$(tput setaf 1)\]𐣼\[$(tput setaf 50)\] \W\[$(tput setaf 7)\]𐣼\[$(tput setaf 1)\]𐣼\[$(tput setaf 46)\] $: \[$(tput sgr0)\]'
 ```
 
-![custome bash prompt](resouces/imgs/custom_bash_prompt1.png)
+![custome bash prompt](resources/imgs/custom_bash_prompt1.png)
