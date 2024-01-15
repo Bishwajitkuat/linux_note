@@ -108,3 +108,9 @@ PS1='\[$(tput setaf 50)$(tput bold)\]§§ \[$(tput setaf 5)\]\@ \[$(tput setaf 4
 ```
 
 ![custome bash prompt](resources/imgs/custom_bash_prompt2.png)
+
+```shell
+PS1='\[$(tput setaf 50)$(tput bold)\]@\[$(tput setaf 46)\]\u\[$(tput setaf 6)\] (\[$(tput setaf 3)\]\t\[$(tput setaf 6)\]) \[$(tput setaf 6)\]𐣼\[$(tput setaf 1)\]𐣼\[$(tput setaf 50)\] \W \[$(tput setaf 6)\]𐣼\[$(tput setaf 1)\]𐣼\[$(tput setaf 46)\] $: \[$(tput setaf 81)\]'
+```
+
+![custome bash prompt](resources/imgs/custom_bash_prompt3.png)
