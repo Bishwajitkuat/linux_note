@@ -1,6 +1,6 @@
 # linux note
 
-This an effort to lear linux operating system, bash and bash-scripting better and in detail.
+This an effort to learn linux operating system, bash and bash-scripting better and in detail.
 
 - <a href="1_terminal_basic.md" target="_blanck">Basic commands</a>
 - <a href="2_Linux_basics.md" target="_blanck" >Linux basics</a>
