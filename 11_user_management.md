@@ -128,3 +128,76 @@ options
 ![user management](resources/imgs/user_mng_userdel1.png)
 
 - user, user group and home directory is being deleted
+
+## Groups in linux
+
+- helps to organize users with similar access rights
+- simplify permission management
+- enhance collaboration and resource sharing
+- controlling access to files and directories
+- strengthen system security
+- each user has a primary, and zero to many secondary groups
+  - ### Primary group
+    - stored in `/etc/passwd` file
+    - default ownership for newly created files
+  - ### Secondary group
+    - multiple memberships are llowed in secondary group
+    - stored in `/etc/group`
+    - this allows us to give this user fine grained access rights to our system
+
+## `groups`
+
+- to see all the existing groups
+
+syntax
+
+`groups [user name]`
+
+- if we do not pass any user name, then all grous of current user will be returns
+- we can pass multiple user name as arguments
+
+### Some importang froups in linux systems
+
+- `root` : the superuser group with administrative privileges which have complete control over the system
+- `sudo` : members can use sudo (administrative privileges) temporarily
+- `adm` : allows members to read log files
+- `lp` : members may manage printers and print queues
+- `www-data` : users have access to web server processes and gives access to web content
+- `plugdev` : allows this user to manage pluggable devices (eg, usb sticks, external HDD etc)
+
+## `usermod` : we can use this command also to modify or to add user group
+
+`usermod [options] [user name]`
+
+- `-g` : to change primary group
+- `-G` : to change secondary group
+- `-aG` : to add secondary group
+
+```shell
+groups
+sudo usermod -aG adm,www-data,lp bisso
+groups bisso
+```
+
+![user management](resources/imgs/user_mng_usermod1.png)
+
+## `adduser` : to add a user to a group
+
+`adduser [user name] [group name]`
+
+## `deluser` : to remove a user from a group
+
+`deluser [user name] [group name]`
+
+```shell
+sudo adduser bisso plugdev
+# adding bisso to plugdev
+groups bisso
+# checking whether the  group is added
+sudo deluser bisso plugdev
+# removing bisso from plugdev
+groups bisso
+# checking whether the group is removed
+```
+
+![user management](resources/imgs/user_mng_add_del_user1.png)
