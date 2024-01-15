@@ -111,3 +111,20 @@ options
 
 - test_user's description added and default shell has been changed
 - test_user is added to sudo secondary group
+
+## `userdel`
+
+- we can also delete an existing user
+
+syntax
+
+`userdel [option] [user name]`
+
+options
+
+- `-r` : to remove the home directory and mails
+- `-f` : force remove of home dir and mails even if the user is logged in
+
+![user management](resources/imgs/user_mng_userdel1.png)
+
+- user, user group and home directory is being deleted
