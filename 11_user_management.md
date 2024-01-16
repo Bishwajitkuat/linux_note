@@ -201,3 +201,92 @@ groups bisso
 ```
 
 ![user management](resources/imgs/user_mng_add_del_user1.png)
+
+## `groupadd` : to create a custom group
+
+`groupadd [options] [group name]`
+
+- `-g` : to set a custom GID, but the GID has to be unique (not in use)
+
+## `groupmod` : to modify a group
+
+`groupmod [options] [group name]`
+
+- `-n` : change group name
+- `-g` : change GID
+
+![user management](resources/imgs/user_mng_groupmod1.png)
+
+## `groupdel` : to delete a group
+
+`groupdel [group name]`
+
+- however it can not delete any primary group
+- primary group is essential for the user, so it can not be deleted withou deleting the user
+
+## `su` : switch user
+
+- to switch user
+- if we do not
+
+`su [user name]`
+
+```shell
+su root
+# if we do not pass any username, it will be switch to root user
+su
+```
+
+## `sudo` : superuser do
+
+`sudo [options] [command]`
+
+- `-k` : by default, terminal remember passwords for 15 min, -k option forget it
+- `-s` : starts new shell with elevated privilege
+- `-u [user name]` : to do something on behave of the other user without their password. eg. sudo -u das -s will run a CLI for das user.
+- it gives temporary root privileges to other users.
+- the user needed to be in sudo grop inoder to use sudo command
+
+## `visudo`
+
+- if we want to edit any sensative file in linux system we should use visudo command
+- `visudo` will create a temporary file when we are editing
+- if we made any mistack, we will have chance to correct it, because it will shows the syntax errors when we save out the file
+-
+
+```shell
+sudo visudo /etc/sudoer
+```
+
+## `/etc/sudoers`
+
+- contains a configaration for sudo users
+- privileges for root user in `/etc/sudoers` file
+- ` root    ALL=(ALL:ALL) ALL`
+
+  - `root` : indicates user name, in this case it's root
+  - `ALL` : indicates host name (machine name)
+  - `(ALL:ALL)`
+    - first `ALL` : the users to which this user sudo into, here, root user can sudo into all user
+    - second `ALL` : the groups to which this user sudo into, here, root user can sudo into all groups
+  - last `ALL` : it allows to run any command as root
+
+- privileges for sudo group in `/etc/sudoers` file
+- `%sudo   ALL=(ALL:ALL) ALL`
+
+  - it same as root user but, group name is indicated by `%`. If there is `%` sign before a name, it indicates that it is a group
+
+- at the end of the file the is : `@includedir /etc/sudoers.d`, means any file inside this directory will be imported to this fiel
+- so if we want add our custom configaration, it is best practive to create a file inside this dir and add configaration into it.
+
+```shell
+sudo touch /etc/sudoers.d/das
+sudo visudo /etc/sudoers.d/das
+# adding the following content to the file
+das ALL= /usr/bin/apt
+# clt+o and clt+x to save and out
+su das
+# das as a sudo user only have acces to apt command, it do not have access to other command which needs sudo privilege
+```
+
+![user management](resources/imgs/user_mng_sudoers1.png)
