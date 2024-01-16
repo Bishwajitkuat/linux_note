@@ -13,3 +13,4 @@ This an effort to learn linux operating system, bash and bash-scripting better a
 - <a href="9_shell_expansions.md" target="_blanck" >Shell expansions</a>
 - <a href="10_unix_files_system.md" target="_blanck" >Unix file system hirearchy</a>
 - <a href="11_user_management.md" target="_blanck" >Linux user management</a>
+- <a href="12_file_permissions.md" target="_blanck" >File permissions</a>
