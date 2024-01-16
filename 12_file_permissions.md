@@ -77,3 +77,51 @@ cat test.txt
 ```
 
 ![file permission](resources/imgs/file_permissions2.png)
+
+## `chmod` with numbers
+
+`chmod [options] [first digit][second digit][third digit] [file name]`
+
+- `-R`: recursive, change permission for all files and dirs inside dir
+- read right has value 4
+- write right has value 2
+- execute right has value 1
+- so all rights value would be 4 + 2 + 1 = 7
+- read-write value would be 4 + 2 = 6
+- and other possible combinations
+- if the total right valu is 0, it means there is no right for this permission
+
+- `first digit` : total right value for user permission
+- `second digit` : total right value for group
+- `third digit` : total right value for other users
+
+```shell
+ls -lh | grep test.txt
+# checking current permissions and right
+sudo chmod 764 test.txt
+# giving permission to owner of all rights, groups of read(4)-write(2) rights and other user of read(4) right
+ ls -lh | grep test.txt
+# checking permissions and right
+```
+
+![file permission](resources/imgs/file_permissions3.png)
+
+**_`Note: `_** for directories, if we give only write right we can not create files inside of it, in order to do that we need both write and execute rights.
+
+```shell
+mkdir test-dir
+ls -lh | grep test-dir
+chmod 640 test-dir
+# giving user permissions for read-write
+ls -lh | grep test-dir
+touch test-dir/test.txt
+# user have write right but still permission denied because we need execute rite to make a file as touch command will be executed inside this dir
+chmod 740 test-dir
+# adding execute right to user permission
+ls -lh | grep test-dir
+touch test-dir/test.txt
+ls -lh test-dir/
+# finally, we are able to create file inside this dir
+```
+
+![file permission](resources/imgs/file_permissions4.png)
