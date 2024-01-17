@@ -125,3 +125,30 @@ ls -lh test-dir/
 ```
 
 ![file permission](resources/imgs/file_permissions4.png)
+
+## `/etc/login.defs`
+
+- we can reconfigure `umask` to set permissions and rights when a new file or directory is created.
+
+```shell
+cat /etc/login.defs
+```
+
+![file permission](resources/imgs/file_permissions5.png)
+
+## `Sticky Bit`
+
+- this permission prevent other users from executing (deleting) folders or files
+
+Syntax
+
+`chmod +t [dir/file name]`
+
+`chmod [0 or 1][u rights value][g rights value][o rights value] [dir/file name]`
+
+- 0 : will turn off sticky bit
+- 1 : will turn of sticky bit
+
+![file permission](resources/imgs/file_permissions6.png)
+
+- if sticky bit is turn on there will be a (t or T) at the end of the permissions letters (ls -l).
